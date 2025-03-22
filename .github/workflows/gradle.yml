@@ -41,6 +41,21 @@ jobs:
     - name: Execute UI test
       run: ./gradlew webTest
 
+    - name : Archive test result
+      uses: actions/upload-artifact@v4.3.4
+      if: always()
+      with:
+        # Artifact name
+        name: Cucumber Report
+        # A file, directory or wildcard pattern that describes what to upload
+        path: reports
+
+    - name: Deploy report to github pages
+      if: always()
+      uses: peaceiris/actions-github-pages@v3.1.12
+      with:
+        PERSONAL_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        PUBLISH_DIR: reports
 
   dependency-submission:
 
