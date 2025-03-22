@@ -1,4 +1,4 @@
-# FP API & UI Test Automation Project
+# API & UI Test Automation Project
 
 This repository contains automated tests for both API (https://dummyapi.io) and UI (https://www.demoblaze.com) of an e-commerce platform using Cucumber, Selenium WebDriver, Java, and other related technologies.
 
